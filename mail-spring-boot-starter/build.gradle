@@ -1,0 +1,38 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.7.RELEASE'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+group 'com.wangjx'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        url = 'http://127.0.0.1:8081/repository/maven-snapshots/'
+    }
+
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.wangjx:mail:1.0-20171108.065120-1'
+    compile 'org.springframework.boot:spring-boot-starter'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}

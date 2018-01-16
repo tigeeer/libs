@@ -1,0 +1,71 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.9.RELEASE'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+group 'com.wangjx'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'maven-publish'
+
+jar {
+    baseName = 'common-web'
+    version = '1.2'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+
+    maven {
+        url = 'http://localhost:8081/repository/maven-snapshots/'
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile 'com.wangjx:common:1.0-20180116.080422-1'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-aop'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId project.group
+            artifactId project.name
+            version '0.0.1'
+            //若是war包，就写components.web,若是jar包，就写components.java
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = 'http://127.0.0.1:8081/repository/maven-releases/'
+
+            credentials {
+                username 'wangjx'
+                password 'wangjinxu'
+            }
+        }
+    }
+}

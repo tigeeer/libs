@@ -1,0 +1,46 @@
+group 'com.wangjx'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven-publish'
+
+jar {
+    baseName = 'common'
+    version = '1.0-SNAPSHOT'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'commons-codec:commons-codec:1.11'
+    compile 'com.google.zxing:core:3.3.1'
+
+    testCompile 'junit:junit:4.12'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId project.group
+            artifactId project.name
+            version project.version
+            //若是war包，就写components.web,若是jar包，就写components.java
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = 'http://127.0.0.1:8081/repository/maven-snapshots/'
+
+            credentials {
+                username 'wangjx'
+                password 'wangjinxu'
+            }
+        }
+    }
+}
