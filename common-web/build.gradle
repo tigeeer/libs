@@ -32,7 +32,7 @@ repositories {
     mavenCentral()
 
     maven {
-        url = 'http://localhost:8081/repository/maven-snapshots/'
+        url = 'http://localhost:8081/repository/maven-releases/'
     }
 }
 
@@ -40,7 +40,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile 'com.wangjx:common:1.0-20180116.080422-1'
+    compile 'com.wangjx:common:0.0.1'
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-aop'
     compile 'org.springframework.boot:spring-boot-starter-security'

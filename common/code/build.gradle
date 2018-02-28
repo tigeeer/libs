@@ -28,14 +28,14 @@ publishing {
         maven(MavenPublication) {
             groupId project.group
             artifactId project.name
-            version project.version
+            version '0.0.1'
             //若是war包，就写components.web,若是jar包，就写components.java
             from components.java
         }
     }
     repositories {
         maven {
-            url = 'http://127.0.0.1:8081/repository/maven-snapshots/'
+            url = 'http://127.0.0.1:8081/repository/maven-releases/'
 
             credentials {
                 username 'wangjx'
