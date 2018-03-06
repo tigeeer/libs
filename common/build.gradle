@@ -28,7 +28,7 @@ publishing {
         maven(MavenPublication) {
             groupId project.group
             artifactId project.name
-            version '0.0.1'
+            version '0.0.3'
             //若是war包，就写components.web,若是jar包，就写components.java
             from components.java
         }

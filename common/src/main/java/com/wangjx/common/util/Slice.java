@@ -8,10 +8,10 @@ import java.util.List;
  * Date: 2016/11/25
  * Time: 11:50
  */
-public class Table<T> {
+public class Slice<T> {
 
     private List<T> list;
-    private int count;
+    private int total;
 
     public List<T> getList() {
         return list;
@@ -21,11 +21,11 @@ public class Table<T> {
         this.list = list;
     }
 
-    public int getCount() {
-        return count;
+    public int getTotal() {
+        return total;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setTotal(int total) {
+        this.total = total;
     }
 }
