@@ -1,4 +1,4 @@
-package com.wangjx.common.util.response;
+package com.wangjx.common.web.util.response;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,7 +27,7 @@ public class ResponseFactory {
         return response;
     }
 
-    public static <T> Response<T> exceptionResponse(Exception e) {
-        return newResponse(ResponseCode.EXCEPTION, e.getMessage());
+    public static <T> Response<T> exceptionResponse(int code , Exception e) {
+        return newResponse(code, e.getMessage());
     }
 }

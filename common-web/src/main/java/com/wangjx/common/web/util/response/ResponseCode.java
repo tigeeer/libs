@@ -1,4 +1,4 @@
-package com.wangjx.common.util.response;
+package com.wangjx.common.web.util.response;
 
 /**
  * Created by IntelliJ IDEA.
@@ -8,5 +8,6 @@ package com.wangjx.common.util.response;
  */
 public interface ResponseCode {
     int SUCCESS = 0;
-    int EXCEPTION = -1;
+    int RUNTIME_EXCEPTION = -1;
+    int LOGIN_EXCEPTION = 101;
 }

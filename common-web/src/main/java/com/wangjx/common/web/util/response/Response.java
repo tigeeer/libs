@@ -1,4 +1,4 @@
-package com.wangjx.common.util.response;
+package com.wangjx.common.web.util.response;
 
 /**
  * Created by IntelliJ IDEA.

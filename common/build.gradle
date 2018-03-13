@@ -6,11 +6,6 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
-jar {
-    baseName = 'common'
-    version = '1.0-SNAPSHOT'
-}
-
 repositories {
     mavenLocal()
     mavenCentral()
@@ -28,7 +23,7 @@ publishing {
         maven(MavenPublication) {
             groupId project.group
             artifactId project.name
-            version '0.0.3'
+            version '0.0.8'
             //若是war包，就写components.web,若是jar包，就写components.java
             from components.java
         }

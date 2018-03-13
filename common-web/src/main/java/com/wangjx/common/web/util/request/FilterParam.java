@@ -1,4 +1,4 @@
-package com.wangjx.common;
+package com.wangjx.common.web.util.request;
 
 /**
  * Created by IntelliJ IDEA.
